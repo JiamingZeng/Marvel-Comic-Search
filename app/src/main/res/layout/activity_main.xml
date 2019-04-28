@@ -33,6 +33,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/toSearch"
             android:layout_width="243dp"
             android:layout_height="wrap_content"
             android:hint="@string/Type_a_character_name" />

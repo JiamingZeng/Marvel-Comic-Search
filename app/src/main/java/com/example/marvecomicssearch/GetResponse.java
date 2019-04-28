@@ -72,7 +72,7 @@ public class GetResponse {
                     i++;
                     String timestamp = "?ts=" + i;
                     String toHash = i + myWholeKey;
-                    String name = "&name=" + input;
+                    String name = "&nameStartsWith=" + input;
                     /* generate hash*/
                     MessageDigest md = MessageDigest.getInstance("MD5");
                     byte[] messageDigest = md.digest(toHash.getBytes());

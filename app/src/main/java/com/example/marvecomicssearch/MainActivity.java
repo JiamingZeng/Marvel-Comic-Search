@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
                 EditText input = findViewById(R.id.toSearch);
                 String igot = getRes.getResponse(input.getText().toString());
                 GsonResults gsonResults = new GsonResults();
-                gsonResults.setCharacters(igot);
                 toSearch();
             }
         });

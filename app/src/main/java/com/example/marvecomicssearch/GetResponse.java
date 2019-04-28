@@ -66,14 +66,14 @@ public class GetResponse {
             @Override
             public void run() {
                 try  {
-                    /** get the actual url*/
+                    /* get the actual url*/
                     String urll = "https://gateway.marvel.com:443/v1/public";
                     String apiKey = "&apikey=c79aa88beaa09e722e51ed4c4dd8747c";
                     i++;
                     String timestamp = "?ts=" + i;
                     String toHash = i + myWholeKey;
                     String name = "&name=" + input;
-                    /** generate hash*/
+                    /* generate hash*/
                     MessageDigest md = MessageDigest.getInstance("MD5");
                     byte[] messageDigest = md.digest(toHash.getBytes());
                     BigInteger number = new BigInteger(1, messageDigest);
@@ -83,7 +83,7 @@ public class GetResponse {
                         hash = "0" + hash;
                     }
                     hash = "&hash=" + hash;
-                    /** post process*/
+                    /* post process*/
                     urll += "/characters" + timestamp + apiKey + hash + name;
                     URL url = new URL(urll);
                     BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));

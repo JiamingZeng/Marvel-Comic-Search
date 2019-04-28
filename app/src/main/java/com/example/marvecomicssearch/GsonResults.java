@@ -71,15 +71,4 @@ public class GsonResults {
         }
         return toReturn;
     }
-
-
-    /**
-     * A helper function to return the specific comic book's information as Comics class. .
-     * @param heroNo - the No. of the hero wanted within the MarvelCharacter list.
-     * @param comicNo - the No. of the comic book wanted within the Comics list
-     * @return Comics.
-     */
-    public Comics getComics(int heroNo, int comicNo) {
-        if (heroNo > 0 || comicNo > 0 || characters())
-    }
 }

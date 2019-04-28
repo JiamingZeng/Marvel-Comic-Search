@@ -72,7 +72,7 @@ public class GetResponse {
                     i++;
                     String timestamp = "?ts=" + i;
                     String toHash = i + myWholeKey;
-
+                    String name = "&name=" + input;
                     /** generate hash*/
                     MessageDigest md = MessageDigest.getInstance("MD5");
                     byte[] messageDigest = md.digest(toHash.getBytes());
@@ -84,7 +84,7 @@ public class GetResponse {
                     }
                     hash = "&hash=" + hash;
                     /** post process*/
-                    urll += "/characters" + timestamp + apiKey + hash;
+                    urll += "/characters" + timestamp + apiKey + hash + name;
                     URL url = new URL(urll);
                     BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
                     String strTemp = "";

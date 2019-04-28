@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 EditText input = findViewById(R.id.toSearch);
-                getRes.getResponse(input.getText().toString());
+                String igot = getRes.getResponse(input.getText().toString());
+                GsonResults gsonResults = new GsonResults();
+                gsonResults.setCharacters(igot);
                 toSearch();
             }
         });

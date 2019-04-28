@@ -60,8 +60,9 @@ public class GetResponse {
         }
     }*/
     private int i = 0;
+    private String toReturn;
     private String myWholeKey = "240dd8655edafdcf8740ac4aa5afb0adf35400c4c79aa88beaa09e722e51ed4c4dd8747c";
-    public void getResponse(final String input) {
+    public String getResponse(final String input) {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -88,17 +89,17 @@ public class GetResponse {
                     URL url = new URL(urll);
                     BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
                     String strTemp = "";
-                    Log.v("what", "at least running");
                     while (null != (strTemp = br.readLine())) {
                         System.out.println(strTemp);
-                        Log.v("try", strTemp);
                     }
+                    toReturn=strTemp;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
         thread.start();
+        return toReturn;
     }
 
 }

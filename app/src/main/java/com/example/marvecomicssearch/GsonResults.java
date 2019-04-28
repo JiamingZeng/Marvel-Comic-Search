@@ -71,4 +71,8 @@ public class GsonResults {
         }
         return toReturn;
     }
+
+    /*public MarvelCharacters findCharacter(int heroNo) {
+        if (heroNo > 10 || )
+    }*/
 }

@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
                 String igot = getRes.getResponse(input.getText().toString());
                 GsonResults gsonResults = new GsonResults();
                 gsonResults.setCharacters(igot);
+                /**String toPrint = gsonResults.getCharactersList().get(2).getName();*/
+                Log.v("results", igot);
                 toSearch();
             }
         });

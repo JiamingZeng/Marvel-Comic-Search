@@ -7,16 +7,21 @@ import java.util.List;
 import java.util.ArrayList;
 import com.example.marvecomicssearch.MarvelCharacters;
 public class GsonResults {
+    /**
+     * Internally stored a list of characters.
+     */
     private List<MarvelCharacters> charactersList;
 
+    /**
+     * Get characters in a list whose names from json.
+     */
     public List<MarvelCharacters> getCharactersList() {
         return charactersList;
     }
 
     /**
-     * Get characters in a list whose names from json.
+     * Set characters in a list whose names from json.
      * @param json - the JSON string returned by the Marvel API
-     * @return list of characters.
      */
     public void setCharacters(final String json) {
         List<MarvelCharacters> toReturn = new ArrayList<>();
@@ -71,4 +76,32 @@ public class GsonResults {
         }
         return toReturn;
     }
+
+
+    /**
+     * A helper function to return a specific marvel character.
+     * @param charactersList - a list of characters
+     * @param heroNo - the number of hero
+     * @return a character.
+     */
+    public static MarvelCharacters findCharacter(List<MarvelCharacters> charactersList, int heroNo) {
+        if (charactersList == null || heroNo > 10 || heroNo > charactersList.size()) {
+            return null;
+        }
+        return charactersList.get(heroNo);
+    }
+    /**
+     * A helper function to return a specific marvel character.
+     * @param hero - a specific marvel character
+     * @param comicNo - the number of comic book
+     * @return a comic book.
+     */
+    public static Comics findComic(MarvelCharacters hero, int comicNo) {
+        if (hero == null || comicNo > 10 || comicNo > hero.getComics().size()) {
+            return null;
+        }
+        return hero.getComics().get(comicNo);
+    }
 }
+
+

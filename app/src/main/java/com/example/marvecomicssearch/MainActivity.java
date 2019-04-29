@@ -88,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         specificBackground.setText(list.get(number).getBackground());
         ImageView back = findViewById(R.id.background3);
         back.setImageResource(R.drawable.background3);
+        TextView comicsInformation = findViewById(R.id.infomation);
+        comicsInformation.setText(GsonResults.ComicSeriesGenerator(list.get(number).getComics()));
         ImageView setBigImage = findViewById(R.id.pic);
         Picasso.with(this).load(list.get(number).getImageUrlL()).resize(380,380)
                 .into(setBigImage);

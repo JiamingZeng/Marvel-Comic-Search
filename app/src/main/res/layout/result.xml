@@ -25,13 +25,13 @@
     <ScrollView
         android:id="@+id/charactersView"
         android:layout_width="386dp"
-        android:layout_height="325dp"
+        android:layout_height="360dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="240dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="89dp"
+        android:layout_marginBottom="50dp"
         android:clipToPadding="false"
         android:scrollbarStyle="insideInset"
         app:layout_constraintBottom_toTopOf="@+id/backToMain"
@@ -64,7 +64,7 @@
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="40dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -96,7 +96,10 @@
                         android:id="@+id/button1"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#F1F1F1"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -108,7 +111,10 @@
                         android:id="@+id/button2"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -132,7 +138,7 @@
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="40dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -164,7 +170,10 @@
                         android:id="@+id/button3"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -176,7 +185,10 @@
                         android:id="@+id/button4"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -200,7 +212,7 @@
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="40dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -232,7 +244,10 @@
                         android:id="@+id/button5"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FAFFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -244,7 +259,9 @@
                         android:id="@+id/button6"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -268,7 +285,7 @@
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="40dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -300,7 +317,10 @@
                         android:id="@+id/button7"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -312,7 +332,10 @@
                         android:id="@+id/button8"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -336,7 +359,7 @@
                 </LinearLayout>
 
                 <Space
-                    android:layout_width="40dp"
+                    android:layout_width="33dp"
                     android:layout_height="wrap_content" />
 
                 <LinearLayout
@@ -369,7 +392,10 @@
                         android:id="@+id/button9"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -381,7 +407,10 @@
                         android:id="@+id/button10"
                         android:layout_width="165dp"
                         android:layout_height="match_parent"
-                        android:text="Button" />
+                        android:background="#A51401"
+                        android:text="Button"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -410,7 +439,11 @@
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
         android:layout_marginBottom="40dp"
+        android:background="#A51401"
+        android:clickable="true"
         android:text="@string/back"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/charactersView" />

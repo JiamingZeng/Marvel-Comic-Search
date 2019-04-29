@@ -65,13 +65,13 @@ public class GsonResults {
         int count = 0;
         for (JsonElement comic : comics) {
             count++;
-            if (count > 10 || count > comics.size()) {
+            if (count > 20 || count > comics.size()) {
                 break;
             }
             Comics comicBook = new Comics();
             JsonObject individualComic = comic.getAsJsonObject();
             comicBook.setComicName(individualComic.get("name").getAsString());
-            comicBook.setResourceURI(individualComic.get("resourceURI").getAsString());
+            /*comicBook.setResourceURI(individualComic.get("resourceURI").getAsString());*/
             toReturn.add(comicBook);
         }
         return toReturn;
@@ -101,6 +101,22 @@ public class GsonResults {
             return null;
         }
         return hero.getComics().get(comicNo);
+    }
+
+    /**
+     * A helper function to return a string of at least 10 comic books' information.
+     * @param comics - a specific marvel character
+     * @return a string of comics.
+     */
+    public static String ComicSeriesGenerator(List<Comics> comics) {
+        if (comics == null || comics.size() == 0) {
+            return "No comics of this character can be found";
+        }
+        String toReturn = "";
+        for (int i = 0; i < comics.size(); i++) {
+            toReturn += comics.get(i).getComicName() + "   ";
+        }
+        return toReturn;
     }
 }
 

@@ -2,4 +2,5 @@
     <string name="app_name">Marve Comics Search</string>
     <string name="background_image_desc">A background image for the menus</string>
     <string name ="Type_a_character_name">Type a character name</string>
+    <string name="back">Back</string>
 </resources>

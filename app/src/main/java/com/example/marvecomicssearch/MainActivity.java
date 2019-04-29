@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -35,17 +38,21 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(igot);
                 GsonResults gsonResults = new GsonResults();
                 gsonResults.setCharacters(igot);
-                String test = gsonResults.getCharactersList().get(1).getImageUrlL();
-                System.out.println(test);
-                toSearch();
+                List<MarvelCharacters> myList = gsonResults.getCharactersList();
+                toSearch(myList);
             }
         });
     }
 
-    void toSearch() {
+    void toSearch(List<MarvelCharacters> myList) {
         setContentView(R.layout.result);
         ImageView back = findViewById(R.id.background2);
         back.setImageResource(R.drawable.resultbackground);
+        for (int i = 1; i < myList.size() + 1; i++) {
+            String text = "button" + i;
+            Button button1 = findViewById(getResources().getIdentifier(text, "id", getPackageName()));
+            button1.setText(myList.get(i - 1).getName());
+        }
         Button searchButton = (Button) findViewById(R.id.backToMain);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -54,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     
-
 
 
 }

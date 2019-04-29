@@ -9,6 +9,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 import com.squareup.picasso.Picasso;
@@ -26,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         menu();
     }
-
+    private List<MarvelCharacters> list;
     void menu() {
         setContentView(R.layout.activity_main);
         ImageView back = findViewById(R.id.background);
@@ -39,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 EditText input = findViewById(R.id.toSearch);
                 String igot = getRes.getResponse(input.getText().toString());
-                System.out.println(igot);
                 GsonResults gsonResults = new GsonResults();
                 gsonResults.setCharacters(igot);
                 List<MarvelCharacters> myList = gsonResults.getCharactersList();
+                list = myList;
                 toSearch(myList);
             }
         });
@@ -56,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
             String text = "button" + i;
             Button button = findViewById(getResources().getIdentifier(text, "id", getPackageName()));
             button.setText(myList.get(i - 1).getName());
+            final int finalI = i - 1;
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    toDetails(finalI);
+                }
+            });
             System.out.println(myList.get(i - 1).getImageUrlM());
             String imageText = "imageView" + i;
             ImageView imageView = findViewById(getResources().getIdentifier(imageText, "id", getPackageName()));
@@ -63,16 +71,6 @@ public class MainActivity extends AppCompatActivity {
             Picasso.with(this).load(myList.get(i - 1).getImageUrlM())
                     .into(imageView);
         }
-        ImageView image = findViewById(R.id.imageView1);
-
-        Picasso.with(this).load("http://i.annihil.us/u/prod/marvel/i/mg/5/90/4c0032463bef2/standard_large.jpg")
-                .into(image);
-
-
-
-
-
-
 
         Button searchButton = (Button) findViewById(R.id.backToMain);
         searchButton.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +80,26 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    void toDetails(int number) {
+        setContentView(R.layout.details);
+        TextView specificName = findViewById(R.id.specificName);
+        specificName.setText(list.get(number).getName());
+        TextView specificBackground = findViewById(R.id.specificBackground);
+        specificBackground.setText(list.get(number).getBackground());
+        ImageView back = findViewById(R.id.background3);
+        back.setImageResource(R.drawable.background3);
+        ImageView setBigImage = findViewById(R.id.pic);
+        Picasso.with(this).load(list.get(number).getImageUrlL()).resize(380,380)
+                .into(setBigImage);
+        Button pre = (Button) findViewById(R.id.previous);
+
+        pre.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                menu();
+            }
+        });
+
+    }
 
 
 }

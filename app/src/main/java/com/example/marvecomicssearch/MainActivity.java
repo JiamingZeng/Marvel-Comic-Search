@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
-
     void toInfo() {
         setContentView(R.layout.details);
         ImageView back = findViewById(R.id.background3);

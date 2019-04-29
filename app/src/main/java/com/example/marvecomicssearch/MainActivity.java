@@ -51,5 +51,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    void toInfo() {
+        setContentView(R.layout.details);
+        ImageView back = findViewById(R.id.background3);
+        back.setImageResource(R.drawable.background3);
+    }
 
 }

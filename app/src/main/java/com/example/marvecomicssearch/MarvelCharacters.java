@@ -7,9 +7,8 @@ import java.util.List;
  * Superheros information.
  */
 public class MarvelCharacters {
-    /**
-     * The list of comics that belongs to the character.
-     */
+
+
     private List<Comics> comics;
     /**
      * The character ID that belongs to the character.
@@ -62,12 +61,18 @@ public class MarvelCharacters {
         return name;
     }
     /**
-     * Getter for Image.
+     * Getter for Image in middle size.
      */
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageUrlM() {
+        return imageUrl  + "/standard_large.jpg";
     }
 
+    /**
+     * Getter for Image in large size.
+     */
+    public String getImageUrlL() {
+        return imageUrl  + "/standard_xlarge.jpg";
+    }
     /**
      * Setter for background.
      */
@@ -99,6 +104,6 @@ public class MarvelCharacters {
      * Setter for Image.
      */
     public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl + "/standard_small.jpg";
+        this.imageUrl = imageUrl;
     }
 }

@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(igot);
                 GsonResults gsonResults = new GsonResults();
                 gsonResults.setCharacters(igot);
-                String test = gsonResults.getCharactersList().get(1).getName();
+                String test = gsonResults.getCharactersList().get(1).getImageUrlL();
                 System.out.println(test);
                 toSearch();
             }

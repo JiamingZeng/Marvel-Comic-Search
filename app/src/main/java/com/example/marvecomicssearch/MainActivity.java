@@ -1,5 +1,6 @@
 package com.example.marvecomicssearch;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.EditText;
-
 import java.util.ArrayList;
+
+import com.squareup.picasso.Picasso;
+
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -50,9 +54,26 @@ public class MainActivity extends AppCompatActivity {
         back.setImageResource(R.drawable.resultbackground);
         for (int i = 1; i < myList.size() + 1; i++) {
             String text = "button" + i;
-            Button button1 = findViewById(getResources().getIdentifier(text, "id", getPackageName()));
-            button1.setText(myList.get(i - 1).getName());
+            Button button = findViewById(getResources().getIdentifier(text, "id", getPackageName()));
+            button.setText(myList.get(i - 1).getName());
+            System.out.println(myList.get(i - 1).getImageUrlM());
+            String imageText = "imageView" + i;
+            ImageView imageView = findViewById(getResources().getIdentifier(imageText, "id", getPackageName()));
+            imageView.setImageResource(R.drawable.background);
+            Picasso.with(this).load(myList.get(i - 1).getImageUrlM())
+                    .into(imageView);
         }
+        ImageView image = findViewById(R.id.imageView1);
+
+        Picasso.with(this).load("http://i.annihil.us/u/prod/marvel/i/mg/5/90/4c0032463bef2/standard_large.jpg")
+                .into(image);
+
+
+
+
+
+
+
         Button searchButton = (Button) findViewById(R.id.backToMain);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
@@ -60,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
 
 
 }

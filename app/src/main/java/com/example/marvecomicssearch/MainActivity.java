@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         menu();
     }
 
     void menu() {
-        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
         ImageView back = findViewById(R.id.background);
         back.setImageResource(R.drawable.background);
@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     void toSearch() {
         setContentView(R.layout.result);
+        ImageView back = findViewById(R.id.background2);
+        back.setImageResource(R.drawable.resultbackground);
         Button searchButton = (Button) findViewById(R.id.backToMain);
         searchButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
